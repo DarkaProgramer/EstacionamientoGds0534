@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Crea un usuario y contraseña</h2>
+      <p>Usa un correo electrónico y una contraseña de al menos 8 caracteres</p>
+    </div>
+  </div>
+  <div class="signup-box">
+    <h2></h2>
+    <form>
+      <div class="form-group">
+        <input
+          type="text"
+          name="nombre"
+          placeholder="nombre"
+          class="form-control"
+          [(ngModel)]="usuario.nombre"
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          name="apellido paterno"
+          placeholder="apeP"
+          class="form-control"
+          [(ngModel)]="usuario.apeP"
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          name="apellido materno"
+          placeholder="apeM"
+          class="form-control"
+          [(ngModel)]="usuario.apeM"
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          name="telefono"
+          placeholder="telefono"
+          class="form-control"
+          [(ngModel)]="usuario.telefono"
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          name="correo"
+          placeholder="correo"
+          class="input"
+          [(ngModel)]="usuario.correo"
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          name="password1"
+          placeholder="password1"
+          class="form-control"
+          [(ngModel)]="usuario.password1"
+          minlength="8"
+          required
+        >
+      </div>
+      <!-- Mostrar mensaje de error para contraseña corta -->
+      <div *ngIf="usuario.password1 && usuario.password1.length < 8" class="error-message">
+        La contraseña debe tener al menos 8 caracteres
+      </div>
+      <button class="btn btn-success btn-block" (click)="newUsuario()">
+        CREAR CUENTA
+      </button>
+    </form>
+  </div>
+</div>
